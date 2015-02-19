@@ -1,89 +1,66 @@
-@media screen and (min-width: 0px) {
+div.software {
+	background: url(software.png);
+	background-repeat: no-repeat;
+	height: 240px;
+	width: 128px;
+}
+
+@media screen and (max-width: 400px) {
 	div.software {
-		background: url(software.png) -512px -240px;
-		background-repeat: no-repeat;
-		height: 240px;
-		width: 128px;
+		background-position: -512px -240px;
 	}
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 400px) and (max-width: 500px) {
 	div.software {
-		background: url(software.png) -384px -240px;
-		background-repeat: no-repeat;
-		height: 240px;
-		width: 128px;
+		background-position: -384px -240px;
 	}
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (max-width: 600px) {
 	div.software {
-		background: url(software.png) -256px -240px;
-		background-repeat: no-repeat;
-		height: 240px;
-		width: 128px;
+		background-position: -256px -240px;
 	}
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 600px) and (max-width: 700px) {
 	div.software {
-		background: url(software.png) -129px -240px;
-		background-repeat: no-repeat;
-		height: 240px;
-		width: 128px;
+		background-position: -129px -240px;
 	}
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 700px) and (max-width: 800px) {
 	div.software {
-		background: url(software.png) 0px -240px;
-		background-repeat: no-repeat;
-		height: 240px;
-		width: 128px;
+		background-position: 0px -240px;
 	}
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 800px) and (max-width: 900px) {
 	div.software {
-		background: url(software.png) -512px 0px;
-		background-repeat: no-repeat;
-		height: 240px;
-		width: 128px;
+		background-position: -512px 0px;
 	}
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 900px) and (max-width: 1000px) {
 	div.software {
-		background: url(software.png) -384px 0px;
-		background-repeat: no-repeat;
-		height: 240px;
-		width: 128px;
+		background-position: -384px 0px;
 	}
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) and (max-width: 1100px) {
 	div.software {
-		background: url(software.png) -256px 0px;
-		background-repeat: no-repeat;
-		height: 240px;
-		width: 128px;
+		background-position: -256px 0px;
 	}
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1100px) and (max-width: 1200px) {
 	div.software {
-		background: url(software.png) -128px 0px;
-		background-repeat: no-repeat;
-		height: 240px;
-		width: 128px;
+		background-position: -128px 0px;
 	}
 }
 
 @media screen and (min-width: 1200px) {
 	div.software {
-		background: url(software.png) 0 0px;
-		background-repeat: no-repeat;
-		height: 240px;
-		width: 128px;
+		background-position: 0 0px;
 	}
 }
