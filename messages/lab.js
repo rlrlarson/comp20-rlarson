@@ -8,6 +8,7 @@ function parseData() {
         var messagesDiv, i, converted;
         messagesDiv = document.getElementById("messages");
         converted = JSON.parse(request.responseText);
+        console.log(converted);
         for (i = 0; i < converted.length; i + 1) {
             messagesDiv.innerHTML += "<p>" + converted[i]["content"] + "</p>";
         }
