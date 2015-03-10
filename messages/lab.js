@@ -9,7 +9,7 @@ function parseData() {
         messagesDiv = document.getElementById("messages");
         converted = JSON.parse(request.responseText);
         for (i = 0; i < converted.length; i + 1) {
-            messagesDiv.innerHtML += "<p>" + converted[i]["content"] + "</p>";
+            messagesDiv.innerHTML += "<p>" + converted[i]["content"] + "</p>";
         }
     } else if (request.readyState === 4 && request.status === 304) {
         alert("No data changed, move along");
