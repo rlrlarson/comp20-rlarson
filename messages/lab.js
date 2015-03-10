@@ -14,7 +14,7 @@ function parseData() {
     } else if (request.readyState === 4 && request.status === 304) {
         alert("No data changed, move along");
     } else if (request.readyState === 4 && request.status === 404) {
-        alert("Hacked by the Chinese.");
+        alert("Not found.");
     }
 }
 
