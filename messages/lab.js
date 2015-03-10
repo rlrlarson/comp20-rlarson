@@ -1,30 +1,28 @@
-function parse() {
-	// Step 1: create instance of object
-	request = new XMLHttpRequest();
-	
-	// Step 2: create or “open” HTTP request
-	request.open(“GET”, “data.json”, true);
-	
-	// Step 3: set up a way to manage the response —to a function
-	request.onreadystatechange = parseData;
-	
-	//Step 4: execute the request
-	request.send();
-}
+/*jslint browser:true */
+var request;
+request = new XMLHttpRequest();
 
 function parseData() {
-	if (request.readyState == 4 && request.status == 200) {
-		messagesDiv = document.getElementById(“messages”);
-		converted = JSON.parse(request.responseText);
-		for(i = 0; i < converted.length; i++) {
-			messagesDiv.innerHtML += “<p>” + converted[i]["content"] + “</p>”;
-	    }
-	}
-	else if (request.readyState == 4 && request.status == 304) {
-		alert(“No data changed, move along”);
-	}
-	else if (request.readyState == 4 && request.status == 404) {
-		alert(“Hacked by the Chinese.”);  
-	}
+    "use strict";
+    if (request.readyState === 4 && request.status === 200) {
+        var messagesDiv, i, converted;
+        messagesDiv = document.getElementById("messages");
+        converted = JSON.parse(request.responseText);
+        for (i = 0; i < converted.length; i + 1) {
+            messagesDiv.innerHtML += "<p>" + converted[i]["content"] + "</p>";
+        }
+    } else if (request.readyState === 4 && request.status === 304) {
+        alert("No data changed, move along");
+    } else if (request.readyState === 4 && request.status === 404) {
+        alert("Hacked by the Chinese.");
+    }
+}
+
+
+function parse() {
+    "use strict";
+    request.open("GET", "data.json", true);
+    request.onreadystatechange = parseData;
+    request.send();
 }
 
