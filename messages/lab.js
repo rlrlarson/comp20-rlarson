@@ -1,9 +1,9 @@
-function parse(){
+function parse() {
 	// Step 1: create instance of object
 	request = new XMLHttpRequest();
 	
 	// Step 2: create or “open” HTTP request
-	request.open(“GET”, “messages.json”, true);
+	request.open(“GET”, “data.json”, true);
 	
 	// Step 3: set up a way to manage the response —to a function
 	request.onreadystatechange = parseData;
