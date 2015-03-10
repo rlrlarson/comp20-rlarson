@@ -1,4 +1,11 @@
-.messages {
-	color: blue;
-
+p {
+	position: relative;
+	width: 250px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #9FDAC7;
+	border: 2px solid #9FDAC7;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
 }
