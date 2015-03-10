@@ -26,4 +26,8 @@ function parseData() {
 	else if (request.readyState == 4 && request.status == 404) {
 		alert(“Hacked by the Chinese.”);  
 	}
+	else {
+		alert("something is happening");
+	}
 }
+
