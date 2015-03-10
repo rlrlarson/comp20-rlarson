@@ -6,7 +6,7 @@ function parse(){
 	request.open(“GET”, “data.json”, true);
 	
 	// Step 3: set up a way to manage the response —to a function
-	request.onreadystatechange = parseData;
+	request.onreadystatechange = parseData();
 	
 	//Step 4: execute the request
 	request.send();
@@ -27,4 +27,3 @@ function parseData() {
 		alert(“Hacked by the Chinese.”);  
 	}
 }
-
