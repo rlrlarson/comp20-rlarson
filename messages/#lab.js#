@@ -1,0 +1,46 @@
+<<<<<<< HEAD
+function parse(){
+=======
+function parse() {
+>>>>>>> da84f6591e2f8e3de0dcb462eb2c0f95165760fc
+	// Step 1: create instance of object
+	request = new XMLHttpRequest();
+	
+	// Step 2: create or œôòüopenœôòı HTTP request
+	request.open(œôòüGETœôòı, œôòüdata.jsonœôòı, true);
+	
+	// Step 3: set up a way to manage the response œôòôto a function
+	request.onreadystatechange = parseData;
+	
+	//Step 4: execute the request
+	request.send();
+}
+
+function parseData() {
+	if (request.readyState == 4 && request.status == 200) {
+		messagesDiv = document.getElementById(œôòümessagesœôòı);
+		converted = JSON.parse(request.responseText);
+<<<<<<< HEAD
+		for(i = 0; i < converted.length; i++) {
+			messagesDiv.innerHtML += œôòü<p>œôòı + converted[i]["content"];
+=======
+	for(i = 0; i < converted.length; i++) {
+	  messagesDiv.innerHtML += œôòü<p>œôòı + converted[i][œôòøcontentœôòù];
+>>>>>>> da84f6591e2f8e3de0dcb462eb2c0f95165760fc
+	    }
+	}
+	else if (request.readyState == 4 && request.status == 304) {
+		alert(œôòüNo data changed, move alongœôòı);
+	}
+	else if (request.readyState == 4 && request.status == 404) {
+		alert(œôòüHacked by the Chinese.œôòı);  
+	}
+<<<<<<< HEAD
+	else {
+		alert("something is happening");
+	}
+}
+=======
+}
+
+>>>>>>> da84f6591e2f8e3de0dcb462eb2c0f95165760fc

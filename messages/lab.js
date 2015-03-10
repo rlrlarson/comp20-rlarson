@@ -16,8 +16,8 @@ function parseData() {
 	if (request.readyState == 4 && request.status == 200) {
 		messagesDiv = document.getElementById(“messages”);
 		converted = JSON.parse(request.responseText);
-	for(i = 0; i < converted.length; i++) {
-	  messagesDiv.innerHtML += “<p>” + converted[i][‘content’];
+		for(i = 0; i < converted.length; i++) {
+			messagesDiv.innerHtML += “<p>” + converted[i]["content"] + “</p>”;
 	    }
 	}
 	else if (request.readyState == 4 && request.status == 304) {
@@ -27,3 +27,4 @@ function parseData() {
 		alert(“Hacked by the Chinese.”);  
 	}
 }
+
