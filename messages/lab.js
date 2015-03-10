@@ -1,4 +1,4 @@
-function parse(){
+function parse() {
 	// Step 1: create instance of object
 	request = new XMLHttpRequest();
 	
@@ -26,7 +26,5 @@ function parseData() {
 	else if (request.readyState == 4 && request.status == 404) {
 		alert(“Hacked by the Chinese.”);  
 	}
-	else {
-		alert("something is happening");
-	}
 }
+
