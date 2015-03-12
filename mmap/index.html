@@ -29,12 +29,12 @@
 					myLat = position.coords.latitude;
 					myLng = position.coords.longitude;
 					me = new google.maps.LatLng(myLat, myLng);
+					createMap();
 				});
 			}
 			else {
 				alert("Geolocation is not supported by your web browser.");
 			}
-			createMap();
 		}
 
 		function createMap() {
