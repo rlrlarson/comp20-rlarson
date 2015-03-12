@@ -14,15 +14,7 @@
 		var map;
 		var marker;
 		var infowindow = new google.maps.InfoWindow();
-	//	var markerimage = {
-	//		url: 'roncampbell.png',
-	//		size: new google.maps.Size(40, 40)
-		//	origin: new google.maps.Point(0,0),
-		//	anchor: new google.maps.Point(0, 10)
-	//	};
 		var markerimage;
-	//	markerimage.style.height = '10px';
-	//	markerimage.style.width = '10px';
 		var markershape = {
 			coords: [1, 1, 1, 40, 40, 40, 40, 1],
 			type: 'poly'
@@ -55,13 +47,7 @@
 
 		function createMap() {
 				map.panTo(me);
-				markerimage = {
-					url: 'roncampbell.png'
-				};
-				/*window.onload = function() {
-					console.log("in window.onload for height of marker");
-					markerimage.style.height = 10; 
-				}*/
+				markerimage = 'roncampbell.png';
 				
 				marker = new google.maps.Marker({
 					position: me,
