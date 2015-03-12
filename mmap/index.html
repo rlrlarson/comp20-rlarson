@@ -20,7 +20,7 @@
 		//	origin: new google.maps.Point(0,0),
 		//	anchor: new google.maps.Point(0, 10)
 	//	};
-		var markerimage = 'roncampbell.png';
+		var markerimage;
 	//	markerimage.style.height = '10px';
 	//	markerimage.style.width = '10px';
 		var markershape = {
@@ -55,6 +55,9 @@
 
 		function createMap() {
 				map.panTo(me);
+				markerimage = {
+					url: 'roncampbell.png'
+				};
 				markerimage.style.height = '10px';
 				markerimage.style.width = '10px';
 				marker = new google.maps.Marker({
