@@ -12,6 +12,7 @@
 		var request = new XMLHttpRequest();
 		var me = new google.maps.LatLng(myLat, myLng);
 		var map;
+		var converted;
 		var marker;
 		var infowindow = new google.maps.InfoWindow();
 		var markerimage;
@@ -67,13 +68,13 @@
 		function sendMyLocation() {
 			request.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
 			request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			request.onreadystatechange = function() {
-				 if (request.readyState === 4 && request.status === 200) {
-
-				 }
-			}
-console.log(myLng);
 			request.send("login=RonCampbell&lat=myLat&lng=myLng");
+			request.onreadystatechange = function() {
+				if (request.readyState === 4 && request.status === 200) {
+					console.log("in if of sendMyLocation");
+				 	converted = JSON.parse(request.responseText);
+				}
+			}
 		}
 
 	google.maps.event.addDomListener(window, 'load', initialize);
