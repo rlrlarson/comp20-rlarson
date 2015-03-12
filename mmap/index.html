@@ -68,16 +68,16 @@
 		function sendMyLocation() {
 			request.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
 			request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			var sendmessage = "login=RonCampbell&lat=";
-			sendmessage.concat(myLat, "&lng=", myLng);
-			request.send(sendmessage);
 		//	request.send("login=RonCampbell&lat=myLat&lng=myLng");
 			request.onreadystatechange = function() {
-				if (request.readyState === 4 && request.status === 200) {
+				if (request.readyState == 4 && request.status == 200) {
 					alert(request.responseText);
 				 	converted = JSON.parse(request.responseText);
 				}
 			}
+			ar sendmessage = "login=RonCampbell&lat=";
+			sendmessage.concat(myLat, "&lng=", myLng);
+			request.send(sendmessage);
 		}
 
 	google.maps.event.addDomListener(window, 'load', initialize);
