@@ -46,21 +46,34 @@
 		}
 
 		function createMap() {
-				map.panTo(me);
-				markerimage = 'roncampbell.png';
+			map.panTo(me);
+			markerimage = 'roncampbell.png';
 				
-				marker = new google.maps.Marker({
-					position: me,
-					title: "RonCampbell",
-					icon: markerimage,
-					shape: markershape
-				});
-				marker.setMap(map);
+			marker = new google.maps.Marker({
+				position: me,
+				title: "RonCampbell",
+				icon: markerimage,
+				shape: markershape
+			});
+			marker.setMap(map);
 
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
-				});
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.setContent(marker.title);
+				infowindow.open(map, marker);
+			});
+			sendMyLocation();
+		}
+
+		function sendMyLocation() {
+			request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			request.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
+			request.onreadystatechange = function() {
+				 if (request.readyState === 4 && request.status === 200) {
+
+				 }
+			}
+console.log(myLng);
+			request.send("login=RonCampbell&lat=myLat&lng=myLng");
 		}
 
 	google.maps.event.addDomListener(window, 'load', initialize);
