@@ -75,7 +75,7 @@
 				 	converted = JSON.parse(request.responseText);
 				}
 			}
-			ar sendmessage = "login=RonCampbell&lat=";
+			var sendmessage = "login=RonCampbell&lat=";
 			sendmessage.concat(myLat, "&lng=", myLng);
 			request.send(sendmessage);
 		}
