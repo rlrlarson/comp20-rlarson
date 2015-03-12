@@ -68,7 +68,8 @@
 		function sendMyLocation() {
 			request.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
 			request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			var sendmessage = string.concat("login=RonCampbell&lat=", myLat, "&lng=", myLng);
+			var sendmessage = "login=RonCampbell&lat=";
+			sendmessage.concat(myLat, "&lng=", myLng);
 			request.send(sendmessage);
 		//	request.send("login=RonCampbell&lat=myLat&lng=myLng");
 			request.onreadystatechange = function() {
