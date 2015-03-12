@@ -73,6 +73,8 @@
 				if (request.readyState == 4 && request.status == 200) {
 				 	converted = JSON.parse(request.responseText);
 				 	console.log(converted);
+				 	alert(converted);
+				 	alert(request.responseText);
 				}
 			}
 			var sendmessage = "login=RonCampbell&lat=" + myLat + "&lng=" + myLng;
