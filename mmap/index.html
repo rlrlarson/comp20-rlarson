@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script>
+	function initialize() {
+		latlng = new google.maps.LatLng(...);
+		// "..." is stuff you have to fill in
+		...
+		...
+		...
+		myOptions = {...};
+		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	}
+    </script>
+</head>
+<body onload="initialize()">
+	<div id="map_canvas" style="width:100%; height:100%"></div>
+</body>
+
+</html>
