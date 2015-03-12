@@ -27,6 +27,12 @@
 					myLng = position.coords.longitude;
 					console.log("mylat = ", myLat);
 					me = new google.maps.LatLng(myLat, myLng);
+					map.panTo(me);
+					marker = new google.maps.Marker({
+					position: me,
+					title: "Here I Am!"
+					});
+					marker.setMap(map);
 				});
 			}
 			else {
