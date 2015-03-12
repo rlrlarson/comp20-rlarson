@@ -100,7 +100,7 @@
 				newmarker.setMap(map);
 				//markersarray.push(newmarker);
 
-				google.maps.event.addListener(marker, 'click', function() {
+				google.maps.event.addListener(newmarker, 'click', function() {
 					otherinfowindow = new google.maps.InfoWindow();
 					otherinfowindow.setContent(this.title);
 					otherinfowindow.open(map, this);
