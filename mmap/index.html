@@ -13,6 +13,16 @@
 		var map;
 		var marker;
 		var infowindow = new google.maps.InfoWindow();
+		var markerimage = {
+			url: "roncampbell.png",
+			size: size: new google.maps.Size(10, 10),
+			origin: new google.maps.Point(0,0),
+			anchor: new google.maps.Point(0, 5)
+		};
+		var markershape = {
+			coords: [1, 1, 10, 1, 10, 10, 10, 1],
+			type: 'poly'
+		};
 
 		var mapOptions = {
 			center: me,
