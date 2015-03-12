@@ -16,6 +16,7 @@
 		var marker;
 		var infowindow = new google.maps.InfoWindow();
 		var markerimage;
+		var locations;
 		var markershape = {
 			coords: [1, 1, 1, 40, 40, 40, 40, 1],
 			type: 'poly'
@@ -72,14 +73,15 @@
 			request.onreadystatechange = function() {
 				if (request.readyState == 4 && request.status == 200) {
 				 	locations = JSON.parse(request.responseText);
+				 	parseLocations();
 				}
 			}
 			var sendmessage = "login=RonCampbell&lat=" + myLat + "&lng=" + myLng;
 			request.send(sendmessage);
-			parseLocations(locations);
+			
 		}
 
-		function parseLocations(locations) {
+		function parseLocations() {
 			var login;
 			var lat;
 			var lng;
