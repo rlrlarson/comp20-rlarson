@@ -28,15 +28,16 @@
 				navigator.geolocation.getCurrentPosition(function(position) {
 					myLat = position.coords.latitude;
 					myLng = position.coords.longitude;
+					me = new google.maps.LatLng(myLat, myLng);
 				});
 			}
 			else {
 				alert("Geolocation is not supported by your web browser.");
 			}
+			createMap();
 		}
 
 		function createMap() {
-				me = new google.maps.LatLng(myLat, myLng);
 				map.panTo(me);
 				marker = new google.maps.Marker({
 					position: me,
