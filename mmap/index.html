@@ -85,16 +85,19 @@
 			var login;
 			var lat;
 			var lng;
+			var otherperson;
+			//var markersarray = new Array();
 			for (i = 0; i < locations.length; i++) {
 				login = locations[i]["login"];
 				lat = locations[i]["lat"];
 				lng = locations[i]["lng"];
-
+				otherperson = new google.maps.LatLng(lat, lng);
 				var newmarker = new google.maps.Marker({
-					position: me,
+					position: ,
 					title: login,
 				});
 				newmarker.setMap(map);
+				//markersarray.push(newmarker);
 
 				google.maps.event.addListener(marker, 'click', function() {
 					infowindow.setContent(this.title);
