@@ -16,6 +16,7 @@
 		var marker;
 		var infowindow = new google.maps.InfoWindow();
 		var markerimage;
+		var locations;
 		var markershape = {
 			coords: [1, 1, 1, 40, 40, 40, 40, 1],
 			type: 'poly'
@@ -71,14 +72,35 @@
 		//	request.send("login=RonCampbell&lat=myLat&lng=myLng");
 			request.onreadystatechange = function() {
 				if (request.readyState == 4 && request.status == 200) {
-				 	converted = JSON.parse(request.responseText);
-				 	console.log(converted);
-				 	alert(converted);
-				 	alert(request.responseText);
+				 	locations = JSON.parse(request.responseText);
 				}
 			}
 			var sendmessage = "login=RonCampbell&lat=" + myLat + "&lng=" + myLng;
 			request.send(sendmessage);
+			parseLocations();
+		}
+
+		function parseLocations() {
+			var login;
+			var lat;
+			var lng;
+			for (i = 0; i < locations.length; i++) {
+				login = locations[i]["login"];
+				lat = locations[i]["lat"];
+				lng = locations[i]["lng"];
+
+				var newmarker = new google.maps.Marker({
+					position: me,
+					title: login,
+				});
+				newmarker.setMap(map);
+
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(this.title);
+					infowindow.open(map, this);
+				});
+
+			}
 		}
 
 	google.maps.event.addDomListener(window, 'load', initialize);
