@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Marauder's Map</title>
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<link rel="stylesheet" href="stylesheet.css" />
 	<script>
 		var myLat = 0;
 		var myLng = 0;
@@ -20,7 +22,7 @@
 			map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 			getMyLocation();
 		}
-		
+
 		function getMyLocation() {
 			console.log("In getMyLocation()");
 			if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
