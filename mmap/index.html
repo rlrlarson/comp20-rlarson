@@ -86,6 +86,7 @@
 			var lat;
 			var lng;
 			var otherperson;
+			var otherinfowindow;
 			//var markersarray = new Array();
 			for (i = 0; i < locations.length; i++) {
 				login = locations[i]["login"];
@@ -100,8 +101,9 @@
 				//markersarray.push(newmarker);
 
 				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(this.title);
-					infowindow.open(map, this);
+					otherinfowindow = new google.maps.InfoWindow();
+					otherinfowindow.setContent(this.title);
+					otherinfowindow.open(map, this);
 				});
 
 			}
