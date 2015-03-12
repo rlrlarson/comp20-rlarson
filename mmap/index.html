@@ -71,8 +71,8 @@
 			request.send("login=RonCampbell&lat=myLat&lng=myLng");
 			request.onreadystatechange = function() {
 				if (request.readyState === 4 && request.status === 200) {
+					alert(request.responseText);
 				 	converted = JSON.parse(request.responseText);
-				 	alert(converted);
 				}
 			}
 		}
