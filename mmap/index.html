@@ -118,7 +118,7 @@
 					distance: d
 				};
 
-				google.maps.event.addListener(newmarker, 'click', function() {
+				google.maps.event.addListener(markerandinfo, 'click', function() {
 					otherinfowindow = new google.maps.InfoWindow();
 					otherinfowindow.setContent(this.marker.title + "<p>" + "Distance: " + this.distance);
 					otherinfowindow.open(map, this.marker);
