@@ -114,7 +114,6 @@
 				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 				var d = R * c;
 				distances.push(d);
-				console.log(distances[i]);
 			/*	var markerandinfo = {
 					marker: newmarker,
 					distance: d
@@ -122,6 +121,7 @@
 
 				google.maps.event.addListener(newmarker, 'click', function() {
 					otherinfowindow = new google.maps.InfoWindow();
+					console.log(distances[i]);
 					otherinfowindow.setContent(this.title + "<p>" + "Distance: " + distances[i] + "</p>");
 					otherinfowindow.open(map, this);
 				});
