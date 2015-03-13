@@ -87,6 +87,7 @@
 			var lng;
 			var otherperson;
 			var otherinfowindow;
+			var distance;
 
 			for (i = 0; i < locations.length; i++) {
 				login = locations[i]["login"];
@@ -111,8 +112,8 @@
 				                Math.cos(toRad(myLat)) * Math.cos(toRad(lat)) * 
 				                Math.sin(dLng/2) * Math.sin(dLng/2);  
 				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-				var distance = R * c; 
-
+				distance = R * c; 
+console.log(distance);
 			/*	var markerandinfo = {
 					marker: newmarker,
 					distance: d
