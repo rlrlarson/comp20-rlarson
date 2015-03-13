@@ -87,7 +87,7 @@
 			var lng;
 			var otherperson;
 			var otherinfowindow;
-			var distance;
+			var distances = new Array();
 
 			for (i = 0; i < locations.length; i++) {
 				login = locations[i]["login"];
@@ -114,6 +114,7 @@
 				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 				distance = R * c; 
 console.log(distance);
+				distances.push(distance);
 			/*	var markerandinfo = {
 					marker: newmarker,
 					distance: d
@@ -121,7 +122,7 @@ console.log(distance);
 
 				google.maps.event.addListener(newmarker, 'click', function() {
 					otherinfowindow = new google.maps.InfoWindow();
-					otherinfowindow.setContent(this.title + "<p>" + "Distance: " + distance);
+					otherinfowindow.setContent(this.title + "<p>" + "Distance: " + distances[i]);
 					otherinfowindow.open(map, this);
 				});
 
