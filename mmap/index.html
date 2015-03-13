@@ -101,9 +101,7 @@
 
 				newmarker.setMap(map);
 
-				google.maps.event.addListener(newmarker, 'click', function() {
-					otherinfowindow = new google.maps.InfoWindow();
-					/* Use the Haversine Formula to find distance between me and other person */
+				/* Use the Haversine Formula to find distance between me and other person */
 
 				var R = 6371; // km 
 				//has a problem with the .toRad() method below.
@@ -112,9 +110,14 @@
 				var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
 				                Math.cos(toRad(myLat)) * Math.cos(toRad(lat)) * 
 				                Math.sin(dLng/2) * Math.sin(dLng/2);  
-				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-				var d = R * c;
+				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+				var d = new Number(); 
+				d = R * c;
 				console.log(d);
+
+
+				google.maps.event.addListener(newmarker, 'click', function() {
+					otherinfowindow = new google.maps.InfoWindow();
 					otherinfowindow.setContent(this.title + "<p>" + "Distance: " + d + "</p>");
 					otherinfowindow.open(map, this);
 				});
