@@ -34,7 +34,7 @@
 		}
 
 		function getMyLocation() {
-			if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
+			if (navigator.geolocation) { 
 				navigator.geolocation.getCurrentPosition(function(position) {
 					myLat = position.coords.latitude;
 					myLng = position.coords.longitude;
@@ -76,7 +76,7 @@
 				}
 			}
 			var sendmessage = "login=RonCampbell&lat=" + myLat + "&lng=" + myLng;
-			request.send("sendmessage");
+			request.send(sendmessage);
 			
 		}
 
