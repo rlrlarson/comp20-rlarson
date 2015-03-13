@@ -94,24 +94,11 @@
 				lng = locations[i]["lng"];
 				otherperson = new google.maps.LatLng(lat, lng);
 
-				var newmarker = new google.maps.Marker({
-					position: otherperson,
-					title: login
-				});
-
-				newmarker.setMap(map);
-
-
-
-				google.maps.event.addListener(newmarker, 'click', function() {
-					otherinfowindow = new google.maps.InfoWindow();
 
 				/* Use the Haversine Formula to find distance between me and other person */
 
 				var R = 6371; // km 
 				//has a problem with the .toRad() method below.
-				lat = this.position.coords.latitude;
-				lng = this.position.coords.longitude;
 				var dLat = toRad(lat-myLat);  
 				var dLng = toRad(lng-myLng);  
 				var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
@@ -119,7 +106,17 @@
 				                Math.sin(dLng/2) * Math.sin(dLng/2);  
 				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 				var d = R * c;
-					otherinfowindow.setContent(this.title + "<p>" + "Distance: " + d + "</p>");
+
+				var newmarker = new google.maps.Marker({
+					position: otherperson,
+					title: login + "<p>" + "Distance: " + d + "</p>";
+				});
+
+				newmarker.setMap(map);
+
+				google.maps.event.addListener(newmarker, 'click', function() {
+					otherinfowindow = new google.maps.InfoWindow();
+					otherinfowindow.setContent(this.title);
 					otherinfowindow.open(map, this);
 				});
 
