@@ -112,9 +112,9 @@
 				                Math.cos(toRad(myLat)) * Math.cos(toRad(lat)) * 
 				                Math.sin(dLng/2) * Math.sin(dLng/2);  
 				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-				distance = R * c; 
-console.log(distance);
-				distances.push(distance);
+				var d = R * c; 
+console.log(d);
+				distances.push(d);
 			/*	var markerandinfo = {
 					marker: newmarker,
 					distance: d
