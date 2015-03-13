@@ -112,12 +112,16 @@
 				                Math.sin(dLng/2) * Math.sin(dLng/2);  
 				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 				var d = R * c; 
-				console.log(d);
+
+				var markerandinfo = {
+					marker = newmarker;
+					distance = d;
+				};
 
 				google.maps.event.addListener(newmarker, 'click', function() {
 					otherinfowindow = new google.maps.InfoWindow();
-					otherinfowindow.setContent(this.title + "<p>" + "Distance: " + d);
-					otherinfowindow.open(map, this);
+					otherinfowindow.setContent(this.marker.title + "<p>" + "Distance: " + this.distance);
+					otherinfowindow.open(map, this.marker);
 				});
 
 			}
