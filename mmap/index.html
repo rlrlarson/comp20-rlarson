@@ -110,8 +110,8 @@
 
 				var R = 6371; // km 
 				//has a problem with the .toRad() method below.
-				lat = this.position.coords.lat;
-				lng = this.position.coords.lng;
+				lat = this.position.coords.latitude;
+				lng = this.position.coords.longitude;
 				var dLat = toRad(lat-myLat);  
 				var dLng = toRad(lng-myLng);  
 				var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
