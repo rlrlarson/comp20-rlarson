@@ -6,7 +6,44 @@
 	<title>Captain's Log</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script>
-	  // Most of your work will be done here...
+
+		var i = 0;
+		var count = 0;
+
+	 	$("document").ready(function() {
+	 		reload();
+	 		i = count;
+	 		$("#msg").change(storeMessage);
+	 	});
+
+	 	function storeMessage() {
+			var message = $("#msg").val();
+			var timestamp = new Date();
+			message = timestamp + " - " + message;
+			localStorage.setItem(i, message);
+	  		$("#log").prepend("<p>" + message + "</p>");
+	  		i++;
+	  		clear();
+	 	}
+
+	 	function clear() {
+	 		$("#msg").val('');
+	 	}
+
+	 	function reload() {
+	 		output = "";
+
+	 		for (key in localStorage) {
+	 			count++;
+	 		}
+
+	 		for (j = 0; j < count; j++) {
+	 			output = "<p>" + localStorage[j] + "</p>" + output;
+	 		}
+
+	 		$("#log").prepend(output);
+	 	}
+
 	</script>
 </head>
 
