@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Security Report</title>
+	<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+	<h4>Conducted by Rebecca Larson, 4/24/15</h4>
+	<h2>Introduction:</h2>
+	<p>The product that is being investigated is <a href="http://polar-reaches-6447.herokuapp.com/">Locations</a> by Zoe Monosson. It displays the login, latitude, longitude, and time of all checkins. I was hired to figure
+    out security issues and vulnerabilities with it.</p>
+
+	<h2>Methodology:</h2>
+	<p>The first thing I did was perform attacks without looking at the source code, known as "black box" testing.
+	   I used curl to post information to the webpage and played around with inserting my own HTML to the webpage.
+	   Then, I looked through the source code to find more vulnerabilities.</p>
+
+	<h2>Abstract of Findings:</h2>
+
+	<h2>Issues Found:</h2>
+	<ol>
+		<li>Cross-Site Scripting</li>
+		<ul>
+			<li>This issue can be found in the POST "/sendLocation" API. </li>
+			<li>The severity of this issue is high because it allows unwanted items (such as images) fill up
+				 the database, and lets the user change the document. </li>
+			<li>Data submitted through the POST API can include HTML in the login, latitude, or longitude, as
+				 the site only checks to make sure that those key values exist before placing them in the database. When printing out the key values in the GET "/" API, the site puts the html code on the indexPage. This can be seen in the example below. The two following posts change the style of
+				 the webpage and add images as the login. </li>
+				 <image src="Comp20SecurityBackgroundHack.jpg"></image>
+				 <image src="Comp20SecurityImageHack.jpg"></image>
+				 <div>This is the result of those posts: </div>
+				 <image height=300 src="Comp20SecurityResultPic.jpg"></image>
+			<li>One way to resolve this issue is to change all "<" and ">" to "& lt" and "& gt" so no tags
+				can be inserted to the webpage and change the style or add images. The entry in the database
+			    can also be deleted so the problem can be later fixed.</li>
+		</ul>
+
+		<li>Filling Up Database</li>
+		<ul>
+			<li>This issue can be found in the POST "/sendLocation" API.</li>
+			<li>The severity of this issue is moderate because it will cause problems later, but will not
+				immediatly hurt the function of the site.</li>
+			<li>The issue is that any amount of information can be entered by the user as a login, latitude,
+				or longitude and then put in the database. This means that the database could fill quickly if
+				a ton of information was entered. As an example, I entered a very long login to the database
+				and it was put in the database and displayed, with images of my input and what it looks like
+				on the webpage below.</li>
+				<image src="Comp20SecurityDBInfoHack.jpg"></image>
+				<image src="Comp20SecurityDBInfoResultPic.jpg"></image>
+			<li>A resolution to this is to have limits on the size of the login, latitude, and longitude. That
+				way, the user input isn't inserted to the database if it is too big.</li>
+		</ul>
+
+	</ol>
+
+	<h2>Conclusion:</h2>
+	<p>This site could have a lot of improvements in checking user data to make sure that the user isn't 
+	   adding malicious material to the database in the POST API and to make sure that their code can't
+	   change the webpage in the root GET API. I would recommend much more user input checking, which would
+	   cost about $400.</p>
+
+</body>
+
+</html>
